@@ -1,0 +1,20 @@
+
+<button (click)="goBack()">Back</button>
+<google-chart>
+  width="300"
+  [title]="chart.title"
+  [type]="chart.type"
+  [data]="chart.data"
+  [columnNames]="chart.columnNames"
+  [options]="chart.options"
+
+  style="width: 10%"
+  title="Width: 10%"
+  type="BarChart"
+  [data]="chart.data"
+  [columnNames]="chart.columnNames"
+  [options]="chart.options"
+  [dynamicResize]="true">
+</google-chart>
+
+<raw-chart [chartData]="rawChartData" [dynamicResize]="true" [formatter]="rawFormatter"></raw-chart>
