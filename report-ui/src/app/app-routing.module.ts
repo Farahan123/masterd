@@ -1,24 +1,25 @@
 import { NgModule, ViewChildren } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { TestComponent } from './test/test.component';
-import { MainComponent } from './main/main.component';
-
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
-
 import { DefaultComponent } from './layouts/default/default.component';
-import { PostsComponent } from './modules/posts/posts.component';
+import { DualaxesComponent } from './graphs/dualaxes/dualaxes.component';
+
 
 const routes: Routes = [{ 
   path: '', component: DefaultComponent,
-  children:[{ path:'', component: DashboardComponent},{    
-  path:'posts', component: PostsComponent
-  }]
+  children:[{ path:'', component: DashboardComponent},
+  {  path:'dual', component: DualaxesComponent},
+  ]
 }];
-//   { path: 'test', component: TestComponent },
-//   { path: 'app', component: MainComponent },
-//   { path: '', redirectTo: '/app', pathMatch: 'full' }
-// ];
 
+//children:[
+//    { path:'dash', component: DashboardComponent, children:[
+//     { path: 'pie', component: PiechartComponent},
+//   ]}
+
+  //{ path: 'pie', component: PiechartComponent} 
+  //{ path: 'app', component: MainComponent },
+  //{ path: '', redirectTo: '/app', pathMatch: 'full' }
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
